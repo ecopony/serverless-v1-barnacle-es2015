@@ -2,16 +2,16 @@
 class Claws {
   constructor() {
     this.state = {
-      open: true
-    }
+      open: true,
+    };
   }
 
- pinch = () => {
-   return {
-     message: 'OUCH!'
-   }
- }
-
+  pinch = () => {
+    const result = 'OUCH!';
+    return {
+      message: result,
+    };
+  }
 }
 
 export default Claws;
