@@ -1,7 +1,11 @@
+import Alexa from 'alexa-sdk';
 
-import Claws from './Claws';
+const pinchHandlers = {
+  WhatsMyColorIntent() { this.emit(':tell', 'Miles Miles from Tomorrowland'); },
+};
 
-module.exports.hello = (event, context, callback) => {
-  const claws = new Claws();
-  callback(null, context.succeed(claws.pinch()));
+module.exports.hello = (event, context, _) => {
+  const alexa = Alexa.handler(event, context);
+  alexa.registerHandlers(pinchHandlers);
+  alexa.execute();
 };

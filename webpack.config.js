@@ -7,11 +7,18 @@ module.exports = {
     filename: 'handler.js',
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
-      exclude: /node_modules/,
-      include: __dirname,
-    }],
+    loaders: [
+      {
+        test: /\.json$/,
+        loaders: ['json'],
+        include: __dirname,
+      },
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        exclude: /node_modules/,
+        include: __dirname,
+      },
+    ],
   },
 };
