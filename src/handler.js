@@ -1,11 +1,12 @@
 import Alexa from 'alexa-sdk';
+import Messages from './Messages';
 
-const pinchHandlers = {
-  WhatsMyColorIntent() { this.emit(':tell', 'Miles Miles from Tomorrowland'); },
+const handlers = {
+  WhatsMyColorIntent() { this.emit(':tell', Messages.welcomeMessage); },
 };
 
 module.exports.hello = (event, context, _) => {
   const alexa = Alexa.handler(event, context);
-  alexa.registerHandlers(pinchHandlers);
+  alexa.registerHandlers(handlers);
   alexa.execute();
 };
