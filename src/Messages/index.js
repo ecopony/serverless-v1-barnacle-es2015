@@ -1,6 +1,6 @@
 
 class Messages {
-  static welcomeMessage = 'Welcome to the Powerful Power Animal Determiner';
+  static comeAgain = 'Please say that again?';
 }
 
 export default Messages;
